@@ -3,6 +3,8 @@ import type { GatsbyConfig } from "gatsby";
 const config: GatsbyConfig = {
   siteMetadata: {
     title: `gatsby-app`,
+    description: `Gatsbyを触ってみる学習用サイト`,
+    author: `@tenn_25`,
     siteUrl: `https://www.yourdomain.tld`
   },
   // More easily incorporate content into your pages through automatic TypeScript type generation and better GraphQL IntelliSense.
@@ -12,20 +14,20 @@ const config: GatsbyConfig = {
   plugins: ["gatsby-plugin-netlify-cms", "gatsby-plugin-styled-components", "gatsby-plugin-image", {
     resolve: 'gatsby-plugin-manifest',
     options: {
-      "icon": "src/images/icon.png"
+      "icon": `${__dirname}/src/images/icon.png`
     }
   }, "gatsby-plugin-mdx", "gatsby-plugin-sharp", "gatsby-transformer-sharp", {
     resolve: 'gatsby-source-filesystem',
     options: {
       "name": "images",
-      "path": "./src/images/"
+      "path": `${__dirname}/src/images/`
     },
     __key: "images"
   }, {
     resolve: 'gatsby-source-filesystem',
     options: {
       "name": "pages",
-      "path": "./src/pages/"
+      "path": `${__dirname}/src/pages/`
     },
     __key: "pages"
   }]
